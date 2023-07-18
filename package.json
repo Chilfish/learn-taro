@@ -1,14 +1,15 @@
 {
   "name": "taro-learn",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
+  "packageManager": "pnpm@8.6.3",
   "description": "learning taro",
   "templateInfo": {
     "name": "default",
     "typescript": true,
     "css": "sass"
   },
-  "author": "",
+  "author": "Chilfish",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
