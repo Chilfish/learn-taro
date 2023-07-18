@@ -8,6 +8,7 @@
     "typescript": true,
     "css": "sass"
   },
+  "author": "",
   "scripts": {
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
@@ -26,14 +27,14 @@
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "lint": "eslint ."
   },
   "browserslist": [
     "last 3 versions",
     "Android >= 4.1",
     "ios >= 8"
   ],
-  "author": "",
   "dependencies": {
     "@babel/runtime": "^7.22.6",
     "@tarojs/components": "3.6.8",
@@ -52,6 +53,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
     "@babel/core": "^7.22.9",
     "@tarojs/cli": "3.6.8",
     "@tarojs/taro-loader": "3.6.8",
