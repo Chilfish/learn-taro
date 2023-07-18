@@ -19,12 +19,15 @@
     "jsx": "preserve",
     "allowJs": true,
     "resolveJsonModule": true,
+    "lib": ["ES6"],
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "miniprogram-api-typings"
     ],
     "paths": {
       "@/*": ["src/*"],
-      "@cp": ["src/components/*"]
+      "@cp": ["src/components/*"],
+      "@vant/*": ["node_modules/@vant/weapp/dist/*"]
     }
   },
   "include": ["./src", "./types"],

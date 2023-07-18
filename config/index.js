@@ -1,7 +1,8 @@
 const path = require('node:path')
 const process = require('node:process')
 
-const src = path.resolve(__dirname, '..', 'src')
+const root = path.resolve(__dirname, '..')
+const vantDist = path.resolve(root, 'node_modules/@vant/weapp/dist')
 
 const config = {
   projectName: 'taro-learn',
@@ -15,13 +16,19 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   alias: {
-    '@': src,
-    '@cp': path.resolve(src, 'components'),
+    '@': path.resolve(root, 'src'),
+    '@cp': path.resolve(root, 'src/components'),
+    '@vant': vantDist,
   },
   plugins: [],
   defineConstants: {},
   copy: {
-    patterns: [],
+    patterns: [
+      {
+        from: vantDist,
+        to: 'dist/components/@vant/',
+      },
+    ],
     options: {},
   },
   framework: 'vue3',
@@ -34,30 +41,15 @@ const config = {
     postcss: {
       pxtransform: {
         enable: true,
-        config: {},
+        config: {
+          selectorBlackList: [/van-/],
+        },
       },
       url: {
         enable: true,
         config: {
           limit: 1024, // 设定转换尺寸上限
         },
-      },
-      cssModules: {
-        enable: true,
-        config: {
-          namingPattern: 'module', // 转换模式，取值为 global/module
-          generateScopedName: '[name]__[local]___[hash:base64:5]',
-        },
-      },
-    },
-  },
-  h5: {
-    publicPath: '/',
-    staticDirectory: 'static',
-    postcss: {
-      autoprefixer: {
-        enable: true,
-        config: {},
       },
       cssModules: {
         enable: true,

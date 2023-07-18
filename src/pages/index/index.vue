@@ -6,6 +6,8 @@ const msg = ref('Hello world')
 
 <template>
   <view class="index">
-    <text>{{ msg }}</text>
+    <van-button type="primary">
+      {{ msg }}
+    </van-button>
   </view>
 </template>

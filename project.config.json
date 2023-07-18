@@ -9,7 +9,14 @@
     "enhance": true,
     "compileHotReLoad": true,
     "postcss": true,
-    "minified": true
+    "minified": true,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./"
+      }
+    ]
   },
   "compileType": "miniprogram"
 }
