@@ -19,10 +19,8 @@ const config = {
   outputRoot: 'dist',
   alias: {
     '@': path.resolve(root, 'src'),
-    '@cp': path.resolve(root, 'src/components'),
-    '@vant': vantDist,
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [

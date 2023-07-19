@@ -46,6 +46,9 @@ devDependencies:
   '@tarojs/cli':
     specifier: 3.6.8
     version: 3.6.8(vue@3.3.4)
+  '@tarojs/plugin-html':
+    specifier: ^3.6.8
+    version: 3.6.8(vue@3.3.4)
   '@tarojs/taro-loader':
     specifier: 3.6.8
     version: 3.6.8(vue@3.3.4)
@@ -2291,6 +2294,24 @@ packages:
       - '@types/webpack-dev-server'
       - supports-color
     dev: false
+
+  /@tarojs/plugin-html@3.6.8(vue@3.3.4):
+    resolution: {integrity: sha512-aSUTRbbPxX0MQ0q11K6eO3EKo1kSX4rsLH9Bbu2f8iu4Nkhkmw9xSHU6WPP8prs6PXBQHCwrzh+otaKTtGBZVw==}
+    dependencies:
+      '@babel/generator': 7.22.9
+      '@babel/parser': 7.22.7
+      '@babel/traverse': 7.22.8
+      '@babel/types': 7.22.5
+      '@tarojs/runtime': 3.6.8
+      '@tarojs/service': 3.6.8(vue@3.3.4)
+      '@tarojs/shared': 3.6.8
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
+      - supports-color
+      - vue
+    dev: true
 
   /@tarojs/plugin-platform-alipay@3.6.8(vue@3.3.4):
     resolution: {integrity: sha512-w2bnh8LE7/eX/3dNmX5HsoQnXXFJeitgp4giU5RRXnWbVEEpuq1QytQT1Bx4jIHFFQ58Bqjl6UuTsfRNTmMAfw==}
