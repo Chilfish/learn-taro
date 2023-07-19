@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const msg = ref('Hello world')
 </script>
 
 <template>
-  <div>
-    <van-button type="primary">
-      {{ msg }}
-    </van-button>
-    <hello />
-
-    <p>233</p>
-  </div>
+  <van-cell-group inset>
+    <van-cell
+      is-link
+      title="Todo List"
+      icon="label-o"
+      link-type="navigateTo"
+      url="/packages/todo/todo"
+    />
+  </van-cell-group>
 </template>

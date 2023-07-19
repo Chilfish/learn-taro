@@ -5,6 +5,14 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/profile/profile',
   ],
+
+  subPackages: [
+    {
+      root: 'packages',
+      pages: ['todo/todo'],
+    },
+  ],
+
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
@@ -34,6 +42,10 @@ export default defineAppConfig({
   },
 
   usingComponents: {
+    'van-cell': vant('cell'),
+    'van-cell-group': vant('cell-group'),
+    'van-icon': vant('icon'),
     'van-button': vant('button'),
+    'van-checkbox': vant('checkbox'),
   },
 })
