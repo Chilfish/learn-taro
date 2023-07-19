@@ -1,3 +1,5 @@
+import ComponentsPlugin from 'unplugin-vue-components/webpack'
+
 const path = require('node:path')
 const process = require('node:process')
 
@@ -17,10 +19,8 @@ const config = {
   outputRoot: 'dist',
   alias: {
     '@': path.resolve(root, 'src'),
-    '@cp': path.resolve(root, 'src/components'),
-    '@vant': vantDist,
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [
@@ -58,6 +58,14 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]',
         },
       },
+    },
+    // 合并webpack配置
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(
+        ComponentsPlugin({
+          dts: 'src/types/components.d.ts',
+        }),
+      )
     },
   },
 }

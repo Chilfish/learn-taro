@@ -25,12 +25,10 @@
       "miniprogram-api-typings"
     ],
     "paths": {
-      "@/*": ["src/*"],
-      "@cp": ["src/components/*"],
-      "@vant/*": ["node_modules/@vant/weapp/dist/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["./src", "./types"],
+  "include": ["./src", "src/types"],
   "exclude": ["node_modules", "dist"],
   "compileOnSave": false
 }

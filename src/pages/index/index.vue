@@ -5,9 +5,12 @@ const msg = ref('Hello world')
 </script>
 
 <template>
-  <view class="index">
+  <div>
     <van-button type="primary">
       {{ msg }}
     </van-button>
-  </view>
+    <hello />
+
+    <p>233</p>
+  </div>
 </template>
