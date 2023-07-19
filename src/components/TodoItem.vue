@@ -21,22 +21,20 @@ const contentStyle = computed(_ => ({
 
 <template>
   <div class="todo-item" :class="{ 'h-auto': isExpanded }">
-    <label>
-      <input
-        type="checkbox" :checked="item.completed"
-        @click="$emit('toggle', item.id)"
-      >
-    </label>
+    <van-checkbox
+      :value="item.completed"
+      @change="$emit('toggle', item.id)"
+    />
     <p
       class="todo-content" :class="contentStyle"
       @click="isExpanded = !isExpanded"
     >
       {{ item.content }}
     </p>
-    <!-- <span
-      class="i-carbon-trash-can h-6 w-6 cursor-pointer color-red opacity-40 hover:opacity-100"
+    <van-icon
+      name="delete-o"
       @click="$emit('delete', item.id)"
-    /> -->
+    />
   </div>
 </template>
 
@@ -48,7 +46,7 @@ const contentStyle = computed(_ => ({
   display: flex;
   align-items: center;
   border-radius: 0.75rem;
-  background-color: #d5d5d5;
+  background-color: #ffffff;
   padding: 1rem;
   text-align: center;
   line-height: 2rem;

@@ -14,25 +14,24 @@ const todos = ref<Todo[]>([
     completed: false,
   },
 ])
-
-definePageConfig({
-  navigationBarTitleText: 'Todo',
-})
 </script>
 
 <template>
   <main>
     <template v-for="todo in todos" :key="todo.id">
-      <TodoItem
-        :item="todo"
-        @toggle="todo.completed = !todo.completed"
-      />
+      <TodoItem :item="todo" @toggle="todo.completed = !todo.completed" />
     </template>
   </main>
 </template>
 
 <style lang="scss">
 main {
-
+  background-color: #F2F3F6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 0.8rem;
 }
 </style>
