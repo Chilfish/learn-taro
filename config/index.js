@@ -26,7 +26,7 @@ const config = {
     patterns: [
       {
         from: vantDist,
-        to: 'dist/components/@vant/',
+        to: 'dist/vant/',
       },
     ],
     options: {},

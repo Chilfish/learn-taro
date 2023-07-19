@@ -42,6 +42,8 @@ export default defineAppConfig({
   },
 
   usingComponents: {
+    'van-cell': vant('cell'),
+    'van-cell-group': vant('cell-group'),
     'van-icon': vant('icon'),
     'van-button': vant('button'),
     'van-checkbox': vant('checkbox'),

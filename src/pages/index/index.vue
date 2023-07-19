@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import Taro from '@tarojs/taro'
 </script>
 
 <template>
-  <main>
-    <van-button
-      type="primary"
-      @click="() => {
-        Taro.navigateTo({
-          url: '/packages/todo/todo',
-        })
-      }"
-    >
-      Todos
-    </van-button>
-  </main>
+  <van-cell-group inset>
+    <van-cell
+      is-link
+      title="Todo List"
+      icon="label-o"
+      link-type="navigateTo"
+      url="/packages/todo/todo"
+    />
+  </van-cell-group>
 </template>
