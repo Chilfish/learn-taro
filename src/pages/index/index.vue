@@ -5,7 +5,6 @@ const msg = ref('Hello world')
 </script>
 
 <template>
-  <view class="index">
-    <text>{{ msg }}</text>
-  </view>
+  <p>Hello</p>
+  <hello :msg="msg" />
 </template>

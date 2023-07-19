@@ -1,7 +1,9 @@
+import ComponentsPlugin from 'unplugin-vue-components/webpack'
+
 const path = require('node:path')
 const process = require('node:process')
 
-const src = path.resolve(__dirname, '..', 'src')
+const root = path.resolve(__dirname, '..')
 
 const config = {
   projectName: 'taro-learn',
@@ -15,10 +17,9 @@ const config = {
   sourceRoot: 'src',
   outputRoot: 'dist',
   alias: {
-    '@': src,
-    '@cp': path.resolve(src, 'components'),
+    '@': path.resolve(root, 'src'),
   },
-  plugins: [],
+  plugins: ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [],
@@ -50,6 +51,13 @@ const config = {
         },
       },
     },
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(
+        ComponentsPlugin({
+          dts: 'src/types/components.d.ts',
+        }),
+      )
+    },
   },
   h5: {
     publicPath: '/',
@@ -66,6 +74,13 @@ const config = {
           generateScopedName: '[name]__[local]___[hash:base64:5]',
         },
       },
+    },
+    webpackChain(chain) {
+      chain.plugin('unplugin-vue-components').use(
+        ComponentsPlugin({
+          dts: 'src/types/components.d.ts',
+        }),
+      )
     },
   },
 }
