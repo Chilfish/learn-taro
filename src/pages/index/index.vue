@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const msg = ref('Hello world')
+import Taro from '@tarojs/taro'
 </script>
 
 <template>
-  <div>
-    <van-button type="primary">
-      {{ msg }}
+  <main>
+    <van-button
+      type="primary"
+      @click="() => {
+        Taro.navigateTo({
+          url: '/packages/todo/todo',
+        })
+      }"
+    >
+      Todos
     </van-button>
-    <hello />
-
-    <p>233</p>
-  </div>
+  </main>
 </template>

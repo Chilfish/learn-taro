@@ -5,6 +5,14 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/profile/profile',
   ],
+
+  subPackages: [
+    {
+      root: 'packages',
+      pages: ['todo/todo'],
+    },
+  ],
+
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
