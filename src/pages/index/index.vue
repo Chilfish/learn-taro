@@ -6,8 +6,11 @@ const msg = ref('Hello world')
 
 <template>
   <view class="index">
-    <van-button type="primary">
+    <!-- <van-button type="primary">
       {{ msg }}
-    </van-button>
+    </van-button> -->
+    <hello />
+
+    <text>233</text>
   </view>
 </template>
