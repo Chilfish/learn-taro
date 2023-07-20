@@ -65,4 +65,14 @@ const contentStyle = computed(_ => ({
 .todo-completed {
   text-decoration-line: line-through;
 }
+
+.h-auto {
+  height: auto;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 </style>
