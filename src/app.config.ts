@@ -3,7 +3,7 @@ import { vant } from './vant'
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/index/profile',
+    'pages/profile/profile',
     'pages/todo/todo',
   ],
 
@@ -21,7 +21,7 @@ export default defineAppConfig({
       },
       {
         text: '我的',
-        pagePath: 'pages/index/profile',
+        pagePath: 'pages/profile/profile',
       },
     ],
   },

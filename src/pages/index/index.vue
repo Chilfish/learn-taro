@@ -12,4 +12,6 @@
       url="/pages/todo/todo"
     />
   </van-cell-group>
+
+  <tab-bar />
 </template>

@@ -1,23 +1,8 @@
 <script setup lang="ts">
-import type { TabBar } from '@/types'
 import { useTabBarStore } from '@/store/tabBar'
+import { TabBarList } from '@/router'
 
 const useTabBar = useTabBarStore()
-
-const items: TabBar[] = [
-  {
-    name: 'home',
-    text: '首页',
-    icon: 'home-o',
-    url: '/pages/index/index',
-  },
-  {
-    name: 'profile',
-    text: '我的',
-    icon: 'user-o',
-    url: '/pages/index/profile',
-  },
-]
 </script>
 
 <template>
@@ -26,7 +11,7 @@ const items: TabBar[] = [
     @change="useTabBar.onTabChange"
   >
     <van-tabbar-item
-      v-for="item in items"
+      v-for="item in TabBarList"
       :key="item.name"
       :icon="item.icon"
       :name="item.name"

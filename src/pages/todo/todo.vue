@@ -46,7 +46,7 @@ function addTodo() {
     </van-field>
 
     <template v-for="todo in todos" :key="todo.id">
-      <TodoItem
+      <todo-item
         :item="todo"
         @toggle="todo.completed = !todo.completed"
         @delete="todos.splice(todos.indexOf(todo), 1)"
