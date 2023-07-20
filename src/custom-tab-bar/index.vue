@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import type { TabBar } from '@/types'
+import { useTabBarStore } from '@/store/tabBar'
 
-const items = ref<TabBar[]>([
+const useTabBar = useTabBarStore()
+
+const items: TabBar[] = [
   {
     name: 'home',
     text: '首页',
@@ -15,18 +17,14 @@ const items = ref<TabBar[]>([
     icon: 'user-o',
     url: '/pages/index/profile',
   },
-])
-
-const activeTab = ref('home')
-
-function onTabChange(event) {
-  console.log(event)
-  activeTab.value = event.detail
-}
+]
 </script>
 
 <template>
-  <van-tabbar :active="activeTab" @change="onTabChange">
+  <van-tabbar
+    :active="useTabBar.activeTab"
+    @change="useTabBar.onTabChange"
+  >
     <van-tabbar-item
       v-for="item in items"
       :key="item.name"
