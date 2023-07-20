@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
@@ -8,7 +9,7 @@
       title="Todo List"
       icon="label-o"
       link-type="navigateTo"
-      url="/packages/todo/todo"
+      url="/pages/todo/todo"
     />
   </van-cell-group>
 </template>

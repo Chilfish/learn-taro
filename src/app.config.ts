@@ -3,15 +3,28 @@ import { vant } from './vant'
 export default defineAppConfig({
   pages: [
     'pages/index/index',
-    'pages/profile/profile',
+    'pages/index/profile',
+    'pages/todo/todo',
   ],
 
-  subPackages: [
-    {
-      root: 'packages',
-      pages: ['todo/todo'],
-    },
-  ],
+  subPackages: [],
+
+  tabBar: {
+    custom: true,
+    color: '#000000',
+    selectedColor: '#1E4273',
+    backgroundColor: '#ffffff',
+    list: [
+      {
+        text: '首页',
+        pagePath: 'pages/index/index',
+      },
+      {
+        text: '我的',
+        pagePath: 'pages/index/profile',
+      },
+    ],
+  },
 
   window: {
     backgroundTextStyle: 'light',
@@ -20,28 +33,9 @@ export default defineAppConfig({
     navigationBarTextStyle: 'black',
   },
 
-  tabBar: {
-    color: '#999999',
-    selectedColor: '#9a9afa',
-    backgroundColor: '#FCFCFC',
-    borderStyle: 'black',
-    list: [
-      {
-        pagePath: 'pages/index/index',
-        text: 'Home',
-        iconPath: 'assets/home.png',
-        selectedIconPath: 'assets/home.png',
-      },
-      {
-        pagePath: 'pages/profile/profile',
-        text: 'Profile',
-        iconPath: 'assets/profile.png',
-        selectedIconPath: 'assets/profile.png',
-      },
-    ],
-  },
-
   usingComponents: {
+    'van-tabbar': vant('tabbar'),
+    'van-tabbar-item': vant('tabbar-item'),
     'van-cell': vant('cell'),
     'van-cell-group': vant('cell-group'),
     'van-field': vant('field'),
