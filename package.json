@@ -30,6 +30,7 @@
     "@tarojs/shared": "3.6.8",
     "@tarojs/taro": "3.6.8",
     "@vant/weapp": "^1.10.21",
+    "pinia": "^2.1.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {
