@@ -19,14 +19,14 @@ export default defineAppConfig({
       {
         pagePath: 'pages/index/index',
         text: 'Home',
-        iconPath: 'assets/home.svg',
-        selectedIconPath: 'assets/home.svg',
+        iconPath: 'assets/home.png',
+        selectedIconPath: 'assets/home.png',
       },
       {
         pagePath: 'pages/profile/profile',
         text: 'Profile',
-        iconPath: 'assets/profile.svg',
-        selectedIconPath: 'assets/profile.svg',
+        iconPath: 'assets/profile.png',
+        selectedIconPath: 'assets/profile.png',
       },
     ],
   },

@@ -27,9 +27,6 @@ const config = {
   },
   framework: 'vue3',
   compiler: 'webpack5',
-  cache: {
-    enable: true,
-  },
   mini: {
     hot: true,
     postcss: {
