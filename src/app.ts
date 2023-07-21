@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { setupServices } from './services'
+
 import './app.scss'
 import '@tarojs/taro/html.css'
+
+setupServices()
 
 const App = createApp({
   onShow() {},
