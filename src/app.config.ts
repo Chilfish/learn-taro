@@ -5,6 +5,7 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/profile/profile',
     'pages/todo/todo',
+    'pages/github/github',
   ],
 
   subPackages: [],

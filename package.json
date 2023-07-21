@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.22.6",
+    "@ngify/http": "^1.5.2",
     "@tarojs/components": "3.6.8",
     "@tarojs/helper": "3.6.8",
     "@tarojs/plugin-framework-vue3": "3.6.8",
@@ -30,6 +31,7 @@
     "@tarojs/shared": "3.6.8",
     "@tarojs/taro": "3.6.8",
     "@vant/weapp": "^1.10.21",
+    "@vueuse/core": "^10.2.1",
     "pinia": "^2.1.4",
     "vue": "^3.3.4"
   },
@@ -53,12 +55,14 @@
     "eslint-plugin-vue": "^9.15.1",
     "miniprogram-api-typings": "^3.10.0",
     "postcss": "^8.4.26",
+    "rxjs": "^7.8.1",
     "style-loader": "3.3.3",
     "stylelint": "^15.10.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6",
     "unplugin-vue-components": "^0.25.1",
     "vue-loader": "^17.2.2",
+    "vue-tsc": "^1.8.5",
     "webpack": "5.88.2"
   }
 }
