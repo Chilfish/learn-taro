@@ -20,7 +20,12 @@ const avatarUrl = computed(() =>
     <img :src="avatarUrl" alt="avatar" class="avatar">
     <div>
       <p class="title"> {{ item.full_name }}</p>
-      <p class="description"> {{ item.description }} </p>
+      <p
+        v-if="item.description"
+        class="description"
+      >
+        {{ item.description }}
+      </p>
 
       <div class="info">
         <div>
@@ -57,15 +62,16 @@ const avatarUrl = computed(() =>
   }
 
   .avatar {
-    height: 100%;
-    width: 5rem;
+    height: 4.5rem;
+    width: 4.5rem;
     border-radius: 0.75rem;
     margin-right: 1rem;
   }
 
   .title {
+    margin-top: 0;
     margin-bottom: 0.5rem;
-    overflow-x: auto;
+    overflow-wrap: anywhere;
     text-align: start;
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -78,6 +84,7 @@ const avatarUrl = computed(() =>
     text-align: start;
     font-size: 0.875rem;
     line-height: 1.25rem;
+    margin: 0;
   }
 
   .info {
