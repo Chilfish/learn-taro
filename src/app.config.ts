@@ -1,4 +1,4 @@
-import { vant } from './vant'
+import { vantComponents } from './vant'
 
 export default defineAppConfig({
   pages: [
@@ -35,13 +35,6 @@ export default defineAppConfig({
   },
 
   usingComponents: {
-    'van-tabbar': vant('tabbar'),
-    'van-tabbar-item': vant('tabbar-item'),
-    'van-cell': vant('cell'),
-    'van-cell-group': vant('cell-group'),
-    'van-field': vant('field'),
-    'van-icon': vant('icon'),
-    'van-button': vant('button'),
-    'van-checkbox': vant('checkbox'),
+    ...vantComponents,
   },
 })
