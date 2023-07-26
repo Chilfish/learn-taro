@@ -14,8 +14,7 @@ watch(
   },
 )
 
-const data = ref(fakeGoods)
-const goodsArr = computed(_ => data.value.filter(item => item.category === category.value))
+const goodsArr = computed(_ => fakeGoods.filter(item => item.category === category.value))
 </script>
 
 <template>
@@ -31,3 +30,11 @@ const goodsArr = computed(_ => data.value.filter(item => item.category === categ
     />
   </div>
 </template>
+
+<style lang="scss">
+.van-card {
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #F6F6F6 !important;
+}
+</style>

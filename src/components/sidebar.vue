@@ -43,7 +43,7 @@ div.main {
   }
 
   main {
-    padding: 0.8rem;
+    padding: 0.5rem;
     width: 100%;
   }
 }
