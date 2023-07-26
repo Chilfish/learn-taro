@@ -28,7 +28,7 @@ const statusText = computed(() => {
 onMounted(() => {
   fromEvent(searchInput.value!, 'input')
     .pipe(
-      map(e => (e.target as HTMLInputElement).value.trim()),
+      map(e => (e as { detail: string }).detail.trim()),
       tap((val) => {
         if (val.length === 0)
           repoStatus.value = 'idle'
@@ -57,9 +57,15 @@ onMounted(() => {
   <main id="github">
     <h3>Search Github Repositories</h3>
 
-    <label class="w-full">
-      <input ref="searchInput" placeholder="repo name" type="search" class="github-search">
-    </label>
+    <van-field
+      ref="searchInput"
+      center
+      clearable
+      placeholder="Repo name"
+      use-button-slot
+      class="github-search"
+    />
+
     <section class="my-2xl w-full">
       <template v-if="repoStatus === 'success'">
         <GithubCard v-for="repo in repos" :key="repo.id" :item="repo" />
@@ -78,24 +84,20 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 90%;
-  padding: 0.5rem;
+  width: 94%;
   margin: 0 auto;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .github-search {
-  width: 90%;
-  border-radius: 0.75rem;
-  padding: 0.5rem;
-  padding-left: 1rem;
+  width: 100%;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  background-color: #f5f5f5;
+
+  .van-cell {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border-radius: 0.75rem;
+    background-color: #f5f5f5;
+  }
 }
 
 .statusText {

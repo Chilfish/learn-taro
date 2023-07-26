@@ -1,3 +1,5 @@
+@import "../node_modules/@vant/weapp/dist/common/index.wxss";
+
 body,
 #app {
   height: 100vh;
@@ -7,6 +9,10 @@ body,
   justify-content: center;
   align-items: center;
   padding: 0.8rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 page {

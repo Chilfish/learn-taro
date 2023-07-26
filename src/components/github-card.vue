@@ -1,28 +1,37 @@
 <script setup lang="ts">
-import { useImage } from '@vueuse/core'
-import { computed } from 'vue'
 import type { GithubRepo } from '@/types'
 
-const repo = defineProps<{
+defineProps<{
   item: GithubRepo
 }>()
-
-const { isLoading } = useImage({ src: repo.item.owner.avatar_url })
-const avatarUrl = computed(() =>
-  isLoading.value
-    ? '/assets/placeHolder.gif'
-    : repo.item.owner.avatar_url,
-)
 </script>
 
 <template>
-  <a :href="item.html_url" target="_blank" rel="noopener noreferrer" class="github-card">
-    <img :src="avatarUrl" alt="avatar" class="avatar">
+  <a
+    :href="item.html_url"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="github-card"
+  >
+    <van-image
+      :src="item.owner.avatar_url"
+      fix="cover"
+      alt="avatar"
+      class="avatar"
+      width="3rem"
+      height="3rem"
+      radius="0.75rem"
+      lazy-load
+      use-loading-slot
+    >
+      <van-loading slot="loading" type="spinner" size="20" vertical />
+    </van-image>
+
     <div>
       <p class="title"> {{ item.full_name }}</p>
       <p
         v-if="item.description"
-        class="description"
+        class="description van-multi-ellipsis--l2"
       >
         {{ item.description }}
       </p>
@@ -59,13 +68,11 @@ const avatarUrl = computed(() =>
   &>div {
     display: flex;
     flex-direction: column;
+    max-width: 85%;
   }
 
-  .avatar {
-    height: 4.5rem;
-    width: 4.5rem;
-    border-radius: 0.75rem;
-    margin-right: 1rem;
+ .van-image {
+    margin-right: 0.5rem;
   }
 
   .title {
