@@ -1,4 +1,4 @@
-import { vantComponents } from './vant'
+import { useVant } from './vant'
 
 export default defineAppConfig({
   pages: [
@@ -6,6 +6,7 @@ export default defineAppConfig({
     'pages/profile/profile',
     'pages/todo/todo',
     'pages/github/github',
+    'pages/shopping/shopping',
   ],
 
   subPackages: [],
@@ -35,6 +36,15 @@ export default defineAppConfig({
   },
 
   usingComponents: {
-    ...vantComponents,
+    ...useVant(
+      'tabbar',
+      'tabbar-item',
+      'cell',
+      'cell-group',
+      'field',
+      'icon',
+      'button',
+      'checkbox',
+    ),
   },
 })

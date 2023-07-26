@@ -1,8 +1,11 @@
-export interface TabBar {
-  name: string
+export interface Tab {
   text: string
-  icon: string
   url: string
+}
+
+export interface TabBar extends Tab {
+  name: string
+  icon: string
 }
 
 export interface Todo {
@@ -28,3 +31,12 @@ export interface GithubRepo {
 }
 
 export type reqState = 'idle' | 'loading' | 'success' | 'error' | 'notFound'
+
+export interface Goods {
+  id: string
+  name: string
+  price: number
+  cover_url: string
+  category: string
+  description?: string
+}

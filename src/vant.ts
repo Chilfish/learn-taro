@@ -3,22 +3,12 @@ import type { vantComponentsName } from './types/vant'
 /**
  * vant weapp component path
  * @param name component name(s)
+ * @returns `{ van-name: vant/name/index }`
  */
-function vant(...name: vantComponentsName[]) {
+export function useVant(...name: vantComponentsName[]) {
   const obj: Record<string, string> = {}
   name.forEach((item) => {
-    obj[`van-${item}`] = `/vant/${item}/index`
+    obj[`van-${item}`] = `@vant/weapp/${item}/index`
   })
   return obj
 }
-
-export const vantComponents = vant(
-  'tabbar',
-  'tabbar-item',
-  'cell',
-  'cell-group',
-  'field',
-  'icon',
-  'button',
-  'checkbox',
-)
