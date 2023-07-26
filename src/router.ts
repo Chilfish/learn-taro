@@ -1,3 +1,4 @@
+import type { RouteRecordRaw } from 'vue-router'
 import type { TabBar } from './types/index'
 
 export const TabBarList: TabBar[] = [
@@ -12,5 +13,12 @@ export const TabBarList: TabBar[] = [
     text: '我的',
     icon: 'user-o',
     url: '/pages/profile/profile',
+  },
+]
+
+export const routes: RouteRecordRaw[] = [
+  {
+    path: '/shopping/:category',
+    component: () => import('@/components/shopping/shopping-main.vue'),
   },
 ]

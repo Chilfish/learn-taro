@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createRouter, createWebHistory } from 'vue-router'
+
 import { setupServices } from './services'
+import { routes } from './router'
 
 import './app.scss'
 import '@tarojs/taro/html.css'
@@ -15,12 +17,7 @@ const App = createApp({
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path: '/shopping/:name',
-      component: () => import('@/components/shopping/shopping-main.vue'),
-    },
-  ],
+  routes,
 })
 
 App

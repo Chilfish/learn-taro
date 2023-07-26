@@ -31,3 +31,12 @@ export interface GithubRepo {
 }
 
 export type reqState = 'idle' | 'loading' | 'success' | 'error' | 'notFound'
+
+export interface Goods {
+  id: string
+  name: string
+  price: number
+  cover_url: string
+  category: string
+  description?: string
+}

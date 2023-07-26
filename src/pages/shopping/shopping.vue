@@ -5,7 +5,7 @@ import { ref } from 'vue'
 const tabs = ref([
   { text: '手机', url: '/shopping/phone' },
   { text: '电脑办公', url: '/shopping/computer' },
-  { text: '食品酒饮', url: '/shopping/food' },
+  { text: '电视', url: '/shopping/tv' },
 ])
 </script>
 

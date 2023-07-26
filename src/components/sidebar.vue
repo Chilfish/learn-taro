@@ -39,6 +39,7 @@ div.main {
 
   .van-sidebar {
     height: 100%;
+    background-color: var(--sidebar-background-color,#f7f8fa);
   }
 
   main {
