@@ -1,8 +1,11 @@
-export interface TabBar {
-  name: string
+export interface Tab {
   text: string
-  icon: string
   url: string
+}
+
+export interface TabBar extends Tab {
+  name: string
+  icon: string
 }
 
 export interface Todo {

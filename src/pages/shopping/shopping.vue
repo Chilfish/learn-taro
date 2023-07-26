@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import './shopping.scss'
-import { useTabBarStore } from '@/store/tabBar'
+import { ref } from 'vue'
 
-const bar = useTabBarStore()
+const tabs = ref([
+  { text: '手机', url: '/shopping/phone' },
+  { text: '电脑办公', url: '/shopping/computer' },
+  { text: '食品酒饮', url: '/shopping/food' },
+])
 </script>
 
 <template>
-  <van-sidebar
-    :active-key="bar.activeTab"
-    @change="bar.onTabChange"
-  >
-    <van-sidebar-item title="电脑办公" />
-    <van-sidebar-item title="手机" />
-    <van-sidebar-item title="食品酒饮" />
-  </van-sidebar>
+  <sidebar :tabs="tabs" />
 </template>
