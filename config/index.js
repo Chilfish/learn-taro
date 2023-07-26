@@ -4,7 +4,7 @@ const path = require('node:path')
 const process = require('node:process')
 
 const root = path.resolve(__dirname, '..')
-const vantDist = path.resolve(root, 'node_modules/@vant/weapp/dist')
+const vantDist = path.resolve(root, 'node_modules/@vant')
 
 const config = {
   projectName: 'taro-learn',
@@ -26,7 +26,11 @@ const config = {
     patterns: [
       {
         from: vantDist,
-        to: 'dist/vant/',
+        to: 'dist/node_modules/@vant',
+      },
+      {
+        from: path.resolve(root, 'dist.package.json'),
+        to: 'dist/package.json',
       },
     ],
     options: {},
