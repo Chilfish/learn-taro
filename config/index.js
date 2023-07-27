@@ -4,7 +4,6 @@ const path = require('node:path')
 const process = require('node:process')
 
 const root = path.resolve(__dirname, '..')
-const vantDist = path.resolve(root, 'node_modules/@vant')
 
 const config = {
   projectName: 'taro-learn',
@@ -19,15 +18,12 @@ const config = {
   outputRoot: 'dist',
   alias: {
     '@': path.resolve(root, 'src'),
+    '@cp': path.resolve(root, 'src/components'),
   },
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {},
   copy: {
     patterns: [
-      {
-        from: vantDist,
-        to: 'dist/node_modules/@vant',
-      },
       {
         from: path.resolve(root, 'dist.package.json'),
         to: 'dist/package.json',
