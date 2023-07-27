@@ -19,6 +19,7 @@ const config = {
   outputRoot: 'dist',
   alias: {
     '@': path.resolve(root, 'src'),
+    '@cp': path.resolve(root, 'src/components'),
   },
   plugins: ['@tarojs/plugin-html'],
   defineConstants: {},

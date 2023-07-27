@@ -45,6 +45,7 @@ export default defineAppConfig({
       'icon',
       'button',
       'checkbox',
+      'image',
     ),
   },
 })
