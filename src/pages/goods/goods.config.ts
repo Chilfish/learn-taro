@@ -7,6 +7,7 @@ export default definePageConfig({
       'goods-action',
       'goods-action-button',
       'goods-action-icon',
+      'popup',
     ),
   },
 })

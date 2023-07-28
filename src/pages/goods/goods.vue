@@ -20,8 +20,31 @@ function onClickButton(event: any) {
   <main class="goods-detail">
     <van-swiper :imgs="goods?.imgs" />
 
-    <div>
-      <h2>{{ goods?.name }}</h2>
+    <div id="goods-main">
+      <h1 id="price">
+        ￥{{ goods?.price }}
+      </h1>
+      <h3 id="name">
+        {{ goods?.name }}
+      </h3>
+
+      <van-cell-group>
+        <van-cell
+          title="已选
+         " value="6+128"
+        >
+          <van-icon slot="right-icon" name="ellipsis" class="custom-icon" />
+        </van-cell>
+        <van-cell
+          title="送至"
+          value="北京市海淀区翻斗大街翻斗花园二号楼1001室"
+          class="van-multi-ellipsis--l1s"
+        >
+          <van-icon slot="right-icon" name="ellipsis" class="custom-icon" />
+        </van-cell>
+      </van-cell-group>
+
+      <div>评论区</div>
     </div>
 
     <van-goods-action>
@@ -55,5 +78,19 @@ main.goods-detail {
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+}
+
+#goods-main {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0.5rem;
+
+  #price {
+    color: #F2270C;
+    margin-bottom: 0.5rem;
+  }
+  #name {
+    font-size: 1.3rem;
+  }
 }
 </style>

@@ -3,7 +3,7 @@ import type { Goods } from '@/types'
 export const fakeGoods: Goods[] = [
   {
     id: '1',
-    name: '小米10',
+    name: '小米13 新品5G手机 徕卡光学镜头 第二代骁龙8处理器 120HZ高刷 黑色 8GB+128GB',
     price: 3999,
     description: '骁龙865，1亿像素相机',
     cover_url: 'https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202305020959_20e2e7716b2cb0b6771c163eb431a802.png',

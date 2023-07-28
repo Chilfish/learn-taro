@@ -19,7 +19,6 @@ const goodsArr = computed(_ => fakeGoods.filter(item => item.category === catego
   >
     <van-card
       :price="goods.price"
-      :desc="goods.description"
       :title="goods.name"
       :thumb="goods.cover_url"
     />
