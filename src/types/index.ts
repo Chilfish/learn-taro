@@ -41,3 +41,8 @@ export interface Goods {
   category: string
   description?: string
 }
+
+export interface GoodsPopup {
+  show: boolean
+  type: 'category' | 'address'
+}

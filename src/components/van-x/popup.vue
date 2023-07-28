@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { inject } from 'vue'
 
-const showPopup = ref(false)
+const showPopup = inject('showPopup') as {
+  show: boolean
+}
 </script>
 
 <template>
   <van-popup
-    :show="showPopup"
+    :show="showPopup.show"
     closeable="true"
     round="true"
     position="bottom"
     custom-style="height: 60%"
-    @close="showPopup = false"
+    @close="showPopup.show = false"
   >
-    <header class="title">
+    <header>
       <slot name="title" />
     </header>
     <main>
@@ -30,12 +32,16 @@ const showPopup = ref(false)
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0 0.5rem;
 
-  header.title {
+  header {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 0.5rem;
+  }
+
+  footer {
+    margin: 0 0.5rem;
   }
 }
 </style>

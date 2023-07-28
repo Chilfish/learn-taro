@@ -20,11 +20,13 @@ page {
 }
 
 .van-cell {
-  .van-cell__title,
-  .van-cell__value {
+  .van-cell__title {
     flex: none;
     font-weight: bold;
     margin-right: 1rem;
+  }
+  .van-cell__value {
+    flex: none;
     max-width: 80%;
     text-align: start;
   }

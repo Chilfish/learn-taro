@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, provide, ref } from 'vue'
 import { fakeGoods } from '@/mock/goods'
 import { useInstanceStore } from '@/store/instance'
+import type { GoodsPopup } from '@/types'
 
 const id = useInstanceStore().instance.router?.params.id ?? '-1'
 
 const goods = computed(_ => fakeGoods.find(item => item.id === id) || null)
+
+const showPopup = ref<GoodsPopup>({
+  show: false,
+  type: 'category',
+})
+provide('showPopup', showPopup)
 
 function onClickIcon(event: any) {
   console.log(event)
@@ -30,8 +37,9 @@ function onClickButton(event: any) {
 
       <van-cell-group>
         <van-cell
-          title="已选
-         " value="6+128"
+          title="已选"
+          value="6+128"
+          @click="showPopup = { show: true, type: 'category' }"
         >
           <van-icon slot="right-icon" name="ellipsis" class="custom-icon" />
         </van-cell>
@@ -39,19 +47,21 @@ function onClickButton(event: any) {
           title="送至"
           value="北京市海淀区翻斗大街翻斗花园二号楼1001室"
           class="van-multi-ellipsis--l1s"
+          @click="showPopup = { show: true, type: 'address' }"
         >
           <van-icon slot="right-icon" name="ellipsis" class="custom-icon" />
         </van-cell>
       </van-cell-group>
 
-      <div>评论区</div>
+      <div class="comment">
+        评论区
+      </div>
     </div>
 
     <van-goods-action>
       <van-goods-action-icon
         icon="chat-o"
         text="客服"
-        @click="onClickIcon"
       />
       <van-goods-action-icon
         icon="cart-o"
@@ -69,6 +79,9 @@ function onClickButton(event: any) {
         @click="onClickButton"
       />
     </van-goods-action>
+
+    <popup-category v-if="showPopup.type === 'category'" />
+    <popup-address v-else />
   </main>
 </template>
 
@@ -76,8 +89,11 @@ function onClickButton(event: any) {
 main.goods-detail {
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: space-between;
+
+  .van-goods-action {
+    margin: 0 0.4rem;
+  }
 }
 
 #goods-main {
@@ -91,6 +107,16 @@ main.goods-detail {
   }
   #name {
     font-size: 1.3rem;
+  }
+
+  .van-cell {
+    padding-left: 0.4rem;
+  }
+
+  .comment {
+    height: 50rem;
+    background-color: #F5F5F5;
+    margin-top: 0.5rem;
   }
 }
 </style>
