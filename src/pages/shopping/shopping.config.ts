@@ -7,9 +7,6 @@ export default definePageConfig({
       'card',
       'sidebar',
       'sidebar-item',
-      'goods-action',
-      'goods-action-button',
-      'goods-action-icon',
     ),
   },
 })

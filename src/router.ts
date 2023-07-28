@@ -19,6 +19,6 @@ export const TabBarList: TabBar[] = [
 export const routes: RouteRecordRaw[] = [
   {
     path: '/goods/category/:category',
-    component: () => import('@/components/shopping/goods-category.vue'),
+    component: () => import('@cp/shopping/goods-category.vue'),
   },
 ]

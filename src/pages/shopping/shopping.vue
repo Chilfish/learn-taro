@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import './shopping.scss'
-
 const tabs = [
   { text: '手机', url: '/goods/category/phone' },
   { text: '电脑办公', url: '/goods/category/computer' },

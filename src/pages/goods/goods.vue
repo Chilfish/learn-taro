@@ -3,8 +3,7 @@ import { computed } from 'vue'
 import { fakeGoods } from '@/mock/goods'
 import { useInstanceStore } from '@/store/instance'
 
-const instance = useInstanceStore()
-const id = instance.instance.router?.params.id || null
+const id = useInstanceStore().instance.router?.params.id ?? '-1'
 
 const goods = computed(_ => fakeGoods.find(item => item.id === id) || null)
 

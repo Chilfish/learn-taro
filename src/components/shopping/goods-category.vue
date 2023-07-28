@@ -13,8 +13,8 @@ const goodsArr = computed(_ => fakeGoods.filter(item => item.category === catego
   <div
     v-for="goods in goodsArr"
     :key="goods.id"
-    @click=" Taro.navigateTo({
-      url: `/pages/shopping/goods-detail?id=${goods.id}`,
+    @click="Taro.navigateTo({
+      url: `/pages/goods/goods?id=${goods.id}`,
     })"
   >
     <van-card
