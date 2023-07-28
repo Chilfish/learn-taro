@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import Taro from '@tarojs/taro'
 import { fakeGoods } from '@/mock/goods'
 
-const route = useRoute()
-
-const category = ref(route.params.category)
-
-watch(
-  () => route.params.category,
-  (newCategory) => {
-    category.value = newCategory
-  },
-)
+const category = computed(_ => useRoute().params.category)
 
 const goodsArr = computed(_ => fakeGoods.filter(item => item.category === category.value))
 </script>
@@ -21,6 +13,9 @@ const goodsArr = computed(_ => fakeGoods.filter(item => item.category === catego
   <div
     v-for="goods in goodsArr"
     :key="goods.id"
+    @click=" Taro.navigateTo({
+      url: `/pages/shopping/goods-detail?id=${goods.id}`,
+    })"
   >
     <van-card
       :price="goods.price"

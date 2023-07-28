@@ -37,6 +37,7 @@ export interface Goods {
   name: string
   price: number
   cover_url: string
+  imgs: string[]
   category: string
   description?: string
 }

@@ -1,12 +1,9 @@
 import { useVant } from '@/vant'
 
 export default definePageConfig({
-  navigationBarTitleText: '商品分类',
+  navigationBarTitleText: '商品详情',
   usingComponents: {
     ...useVant(
-      'card',
-      'sidebar',
-      'sidebar-item',
       'goods-action',
       'goods-action-button',
       'goods-action-icon',

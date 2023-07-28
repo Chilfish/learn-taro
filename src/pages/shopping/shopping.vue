@@ -2,13 +2,12 @@
 import './shopping.scss'
 
 const tabs = [
-  { text: '手机', url: '/shopping/phone' },
-  { text: '电脑办公', url: '/shopping/computer' },
-  { text: '电视', url: '/shopping/tv' },
+  { text: '手机', url: '/goods/category/phone' },
+  { text: '电脑办公', url: '/goods/category/computer' },
+  { text: '电视', url: '/goods/category/tv' },
 ]
 </script>
 
 <template>
-  <!-- <sidebar :tabs="tabs" /> -->
-  <GoodsMain />
+  <sidebar :tabs="tabs" />
 </template>

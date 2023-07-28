@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  imgs: string[]
+  imgs?: string[]
 }>()
 </script>
 

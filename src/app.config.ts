@@ -7,6 +7,7 @@ export default defineAppConfig({
     'pages/todo/todo',
     'pages/github/github',
     'pages/shopping/shopping',
+    'pages/shopping/goods-detail',
   ],
 
   subPackages: [],
