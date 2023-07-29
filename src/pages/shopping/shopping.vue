@@ -7,5 +7,5 @@ const tabs = [
 </script>
 
 <template>
-  <sidebar :tabs="tabs" />
+  <c-sidebar :tabs="tabs" />
 </template>

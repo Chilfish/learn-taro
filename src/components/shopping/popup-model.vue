@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <popup>
+  <c-popup>
     <template #main>
       <p>add</p>
     </template>
@@ -19,7 +19,7 @@
         />
       </van-goods-action>
     </template>
-  </popup>
+  </c-popup>
 </template>
 
 <style lang="scss">

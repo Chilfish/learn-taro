@@ -25,7 +25,7 @@ function onClickButton(event: any) {
 
 <template>
   <main class="goods-detail">
-    <van-swiper :imgs="goods?.imgs" />
+    <c-swiper :imgs="goods?.imgs" />
 
     <div id="goods-main">
       <h1 id="price">
@@ -111,6 +111,10 @@ main.goods-detail {
 
   .van-cell {
     padding-left: 0.4rem;
+
+    .van-cell__title {
+      font-weight: bold;
+    }
   }
 
   .comment {

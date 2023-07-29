@@ -35,6 +35,7 @@ export type reqState = 'idle' | 'loading' | 'success' | 'error' | 'notFound'
 interface ModelValues {
   name: string
   price: string
+  img?: string
 }
 
 interface GoodsModel {

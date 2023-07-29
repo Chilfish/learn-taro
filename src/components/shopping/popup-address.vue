@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <popup>
+  <c-popup>
     <template #title>
       <p>配送至</p>
     </template>
@@ -33,5 +33,5 @@
         选择其他地址
       </van-button>
     </template>
-  </popup>
+  </c-popup>
 </template>
