@@ -10,7 +10,7 @@ const goods = computed(_ => fakeGoods.find(item => item.id === id) || null)
 
 const showPopup = ref<GoodsPopup>({
   show: false,
-  type: 'category',
+  type: 'model',
 })
 provide('showPopup', showPopup)
 
@@ -39,7 +39,7 @@ function onClickButton(event: any) {
         <van-cell
           title="已选"
           value="6+128"
-          @click="showPopup = { show: true, type: 'category' }"
+          @click="showPopup = { show: true, type: 'model' }"
         >
           <van-icon slot="right-icon" name="ellipsis" class="custom-icon" />
         </van-cell>
@@ -80,7 +80,7 @@ function onClickButton(event: any) {
       />
     </van-goods-action>
 
-    <popup-category v-if="showPopup.type === 'category'" />
+    <popup-model v-if="showPopup.type === 'model'" />
     <popup-address v-else />
   </main>
 </template>
