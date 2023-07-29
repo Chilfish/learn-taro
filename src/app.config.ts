@@ -6,7 +6,9 @@ export default defineAppConfig({
     'pages/profile/profile',
     'pages/todo/todo',
     'pages/github/github',
+
     'pages/shopping/shopping',
+    'pages/goods/goods',
   ],
 
   subPackages: [],
@@ -45,6 +47,7 @@ export default defineAppConfig({
       'icon',
       'button',
       'checkbox',
+      'image',
     ),
   },
 })

@@ -18,3 +18,19 @@ body,
 page {
   height: 100%;
 }
+
+.van-cell {
+  .van-cell__title {
+    flex: none;
+    margin-right: 1rem;
+  }
+  .van-cell__value {
+    flex: none;
+    max-width: 80%;
+    text-align: start;
+  }
+  .custom-icon {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}

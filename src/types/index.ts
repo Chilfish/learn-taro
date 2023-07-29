@@ -32,11 +32,29 @@ export interface GithubRepo {
 
 export type reqState = 'idle' | 'loading' | 'success' | 'error' | 'notFound'
 
+interface ModelValues {
+  name: string
+  price: string
+  img?: string
+}
+
+interface GoodsModel {
+  name: string
+  values: ModelValues[]
+}
+
 export interface Goods {
   id: string
   name: string
   price: number
   cover_url: string
+  imgs: string[]
   category: string
   description?: string
+  model: GoodsModel[]
+}
+
+export interface GoodsPopup {
+  show: boolean
+  type: 'model' | 'address'
 }

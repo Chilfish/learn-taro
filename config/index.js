@@ -20,7 +20,10 @@ const config = {
     '@': path.resolve(root, 'src'),
     '@cp': path.resolve(root, 'src/components'),
   },
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [
+    '@tarojs/plugin-html',
+    'taro-plugin-vant-weapp',
+  ],
   defineConstants: {},
   copy: {
     patterns: [
@@ -33,9 +36,9 @@ const config = {
   },
   framework: 'vue3',
   compiler: 'webpack5',
-  // cache: {
-  //   enable: true, // 不要开启缓存，还没解决配置文件的缓存一致性问题，导致修改配置文件后，不生效
-  // },
+  cache: {
+    enable: false, // 不要开启缓存，还没解决配置文件的缓存一致性问题，导致修改配置文件后，不生效
+  },
   mini: {
     hot: true,
     postcss: {
